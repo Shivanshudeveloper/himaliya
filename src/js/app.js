@@ -39,8 +39,11 @@ $( document ).ready(function() {
                         phoneno: ""
                     })
                     .then(function(docRef) {
-                        console.log("Document written with ID: ", docRef.id);
-                        window.location = "phone_verification.html?id="+docRef.id;
+                        $.post(`https://aictemail2.herokuapp.com/himaliyaregisterstudent/${docRef.id}/${email}/${fullname}`, {
+                            docRef: docRef.id
+                        }).then(() => {
+                            window.location = "phone_verification.html?id="+docRef.id;
+                        })
                     })
                     .catch(function(error) {
                         console.error("Error adding document: ", error);
@@ -75,8 +78,11 @@ $( document ).ready(function() {
                         phoneno: ""
                     })
                     .then(function(docRef) {
-                        console.log("Document written with ID: ", docRef.id);
-                        window.location = "phone_verification.html?id="+docRef.id;
+                        $.post(`https://aictemail2.herokuapp.com/himaliyaregisterstudent/${docRef.id}/${email}/${fullname}`, {
+                            docRef: docRef.id
+                        }).then(() => {
+                            window.location = "phone_verification.html?id="+docRef.id;
+                        })
                     })
                     .catch(function(error) {
                         console.error("Error adding document: ", error);

@@ -166,9 +166,17 @@
     <!-- slider-end -->
 
     <section id="section1" class="container w-75 mt-5 mb-5" >
-        <h6 class="display-4 font-weight-bold mt-4 mb-4 text-center">
-            Registration Successfully Done
-        </h6>
+        <h1 class="text-dark text-center" >
+            Thank You for applying in Himalayiya University
+        </h1>
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Well done!</h4>
+            <p class="text-dark" >
+                We have successfully received your registration details. We are currently receiving a heavy volume of applications country wide our executive will contact you soon within 48 hours.
+            </p>
+            <hr>
+            <p id="referenceId" class="mb-0 text-dark h5"></p>
+        </div>
         
     </section>
 
@@ -331,6 +339,7 @@
                 var pageURL = window.location.href;
                     url = new URL(pageURL);
                     id = url.searchParams.get("id");
+                $("#referenceId").html(`Your Reference ID is <span class="font-weight-bold" >${id}</span>. We have also mailed you the same.`);
                 db.collection("students").doc(id).set({
                         phoneno: user.phoneNumber
                     }, { merge: true })
