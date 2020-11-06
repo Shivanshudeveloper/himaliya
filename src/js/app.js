@@ -23,6 +23,7 @@ $( document ).ready(function() {
                 $("#section2").show();
                 $("#section1").hide();
                 $("#submitUg").click(() => {
+                    $("#submitUg").html("Submitting....");
                     var enqueryug = $("#enqueryug").val();
                     db.collection("students").add({
                         fullname,
@@ -53,6 +54,7 @@ $( document ).ready(function() {
                 $("#section3").show();
                 $("#section1").hide();
                 $("#submitPg").click(() => {
+                    $("#submitPg").html("Submitting....");
                     var institute = $("#institute").val(),
                     degree = $("#degree").val(),
                     specilization = $("#specilization").val(),
